@@ -60,9 +60,7 @@ class SharedbAce extends EventEmitter {
       if (err) throw err;
 
       if (doc.type === null) {
-        throw new Error('ShareDB document uninitialized. Please check if you'
-                        + ' have the correct id or that you have initialized '
-                        + 'the document in the server.');
+        this.emit('noDoc');
       }
 
       this.emit('ready');
